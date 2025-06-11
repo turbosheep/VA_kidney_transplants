@@ -1,0 +1,61 @@
+{
+  "target_rules": [
+    {
+      "category": "PATIENT",
+      "literal": "patient",
+      "pattern": [{"LOWER": {"IN": ["patient", "pt", "vet", "veteran"]}}, {"IS_SPACE": true, "OP": "?"}, {"ORTH": ".", "OP": "?"}]
+    },
+    {
+      "category": "CENTER",
+      "literal": "center",
+      "pattern": [{"LOWER": {"IN": ["center", "team", "clinic", "coordinator", "nurse", "doctor", "nursing", "centers", "program", "programs"]}}]
+    },
+    {
+      "category": "EVALUATION",
+      "literal": "eval",
+      "pattern": [{"LOWER": {"FUZZY1": {"IN": ["evaluation", "evaluated", "evaluating", "evaluate", "consult", "consultation", "application"]}}}]
+    },
+    {
+      "category": "EVALUATION",
+      "literal": "eval",
+      "pattern": [{"LOWER": {"IN": ["eval", "process"]}}]
+    },
+    {
+      "category": "WORKUP",
+      "literal": "work up",
+      "pattern": [{"LOWER": {"IN": ["w", "work", "wk", "wrk", "worked", "working"]}}, 
+          {"IS_PUNCT": true, "OP":"?"}, 
+          {"LOWER": {"IN": ["u", "up"]}}]
+    },
+    {
+      "category": "WORKUP",
+      "literal": "work up",
+      "pattern": [{"LOWER": {"IN": ["workup"]}}]
+    },
+    {
+      "category": "LIST",
+      "literal": "list",
+      "pattern": [{"LOWER": {"IN": ["wait", "waiting"]}, "OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["list", "waitlist"]}}]
+    },
+    {
+      "category": "TRANSPLANT",
+      "literal": "transplant",
+      "pattern": [{"LOWER": {"FUZZY1": {"IN": ["transplant", "tranplant", "transplantation", "transplants"]}}}]
+    },
+    {
+      "category": "TRANSPLANT",
+      "literal": "transplant",
+      "pattern": [{"LOWER": {"IN": ["txp", "tx", "trans"]}}]
+    },
+    {
+      "category": "KIDNEY",
+      "literal": "kidney",
+      "pattern": [{"LOWER": {"IN": ["kidney", "renal", "kid"]}}]
+    },
+    {
+      "category": "OTHER_ANATOMY",
+      "literal": "heart",
+      "pattern": [{"LOWER": {"IN": ["heart", "lung", "liver", "eye", "bone", "cornea", "corneal", "cell", "microbiota", "fecal", "cardiac", "pancreas"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "marrow", "OP": "?"}]
+    }
+    ]
+}

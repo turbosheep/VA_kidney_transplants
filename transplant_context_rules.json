@@ -1,0 +1,684 @@
+{
+  "context_rules": [
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "not at this time",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "TRANSPLANT_CONDITION",
+      "literal": "possible",
+      "pattern": [{"LOWER": {"IN": ["possible", "poss", "probable", "probably", "likely"]}}],
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 3
+    },
+    {
+      "category": "TRANSPLANT_CONDITION",
+      "literal": "if",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 3
+    },
+    {
+      "category": "TRANSPLANT_CONDITION",
+      "literal": "may become a candidate",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "TRANSPLANT_CONDITION",
+      "literal": "look into",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "TRANSPLANT_CONDITION",
+      "literal": "when",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 3
+    },
+    {
+      "category": "TRANSPLANT_CONDITION",
+      "literal": "at this time",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "interested in",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "interested in work-up",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "seen for",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "like a",
+      "pattern": [{"LOWER": {"IN": ["like", "wants", "desires"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "a"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "wished to pursue",
+      "pattern": [{"LOWER": {"IN": ["wished", "interested"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["in", "to"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["pursue", "pursuing"]}, "OP":"?"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "motivated to recieve",
+      "pattern": [{"LOWER": "motivated"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["by", "for", "to"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["recieve", "recieving"]}, "OP":"?"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "asked about",
+      "pattern": [{"LOWER": {"IN": ["ask", "asked", "thought", "thinking"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "about"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "he wants",
+      "pattern": [{"LOWER": {"IN": ["i", "he", "she", "they"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["want", "wants"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["a", "the"]}, "OP":"?"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "pt wants",
+      "pattern": [{"_": {"concept_tag": "PATIENT"}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER":{"IN": ["want", "wants"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["a", "the"]}, "OP":"?"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "the possibility and benefits of obtaining a",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "option of",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "will need",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "treatment options",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 8
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "prefer",
+      "pattern": [{"LOWER": {"IN": ["prefer", "preferred", "prefers"]}}],
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 5
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "received education about",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 5
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "defer",
+      "pattern": [{"LOWER": {"IN": ["defer", "deferred", "postpone", "postponed"]}}],
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 5
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "expressed interest in",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 5
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "called to discuss",
+      "pattern": [{"LOWER": "called"}, {"IS_SPACE": true, "OP": "?"}, {"_": {"concept_tag": "PATIENT"}, "OP": "*"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "to"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["discuss", "counsel"]}}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "patient was interviewed",
+      "pattern": [{"_": {"concept_tag": "PATIENT"}, "OP": "*"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "was"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "interviewed"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "regarding"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "discussed",
+      "direction": "BIDIRECTIONAL",
+      "pattern": [{"LOWER": "also", "OP":"?"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["discuss", "discussed", "discussing", "counsel", "counseled"]}}],
+      "max_scope": 8
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "will be discussed",
+      "direction": "BACKWARD",
+      "pattern": [{"LOWER": "will"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "be", "OP":"?"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["discuss", "discussed", "discussing", "counsel", "counseled"]}}],
+      "max_scope": 8
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "seeking",
+      "direction": "FORWARD",
+      "max_scope": 5
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "wants a",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "understands need for",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "uninterested in",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "evaluation appointment",
+      "pattern": null,
+      "direction": "BACKWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "requesting",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "continue education for",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "assessed by nephrology for",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "to be done before",
+      "pattern": [{"LOWER": "to"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "be"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN":["done", "completed", "performed"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "before"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "start",
+      "pattern": null,
+      "direction": "FORWARD",
+      "allowed_types": ["KIDNEY_TRANSPLANT_EVALUTATION", "TRANSPLANT_EVALUTATION"]
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "involve",
+      "pattern": null,
+      "direction": "FORWARD",
+      "allowed_types": ["TRANSPLANT_CENTER"]
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "work up",
+      "pattern": [{"_": {"concept_tag": "WORKUP"}, "OP": "+"}],
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 7
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "before referral",
+      "pattern": [{"LOWER": {"IN":["before", "prior", "likely", "need", "needed", "pre"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN":["initiate", "initiating", "initiated", "start", "started", "starting", "began", "begin", "beginning"]}, "OP":"?"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "to", "OP": "?"}, {"IS_SPACE": true, "OP": "?"}, {"_": {"concept_tag": "EVALUATION"}}],
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "initiate referral",
+      "pattern": [{"LOWER": {"IN":["initiate", "initiating", "initiated", "start", "started", "starting", "began", "begin", "beginning"]}}, {"IS_SPACE": true, "OP": "?"}, {"_": {"concept_tag": "EVALUATION"}, "OP":"?"}],
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "proceed with education and planning for",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "seen for",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "candidacy and potential risks for",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "pre",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "is getting a",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "in consideration for",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "required prior to",
+      "pattern": [{"LOWER": {"IN": ["required", "evaluation"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "prior"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "to"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "education on",
+      "pattern": [{"LOWER": {"IN": ["education", "counsel", "counseling", "educated"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["on", "regarding", "provided"]}}],
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "evaluation in progress",
+      "pattern": null,
+      "direction": "BACKWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "lose weight",
+      "pattern": [{"LOWER": {"IN":["lose", "loose", "losing", "lost"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "weight"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["so", "for", "prior"]}, "OP": "?"}],
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "lose weight",
+      "pattern": [{"LOWER": "weight"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN":["loss", "lost"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["so", "for", "prior"]}, "OP": "?"}],
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "lose weight",
+      "pattern": [{"LOWER": "bariatric"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "surgery"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["so", "for", "prior"]}, "OP": "?"}],
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "stop smoking",
+      "pattern": [{"LOWER": {"IN":["quit", "quitting", "stop", "stopping", "ceasing", "ceased"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "smoking"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "in order to be placed",
+      "pattern": [{"LOWER": "in"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "order"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "to"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "be"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN":["place", "placed"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "on"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "eligible for",
+      "pattern": [{"LOWER": {"IN": ["eligible", "evaluation", "evaluated", "assessed", "assessment", "assess", "candidate", "candidacy", "prepare", "prepared", "preparing"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "for"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "being evaluted",
+      "pattern": [{"LOWER": "being"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": {"IN": ["evaluated", "assessed", "prepared"]}}],
+      "direction": "BACKWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "evaluated in the future",
+      "pattern": [{"LOWER": {"IN": ["evaluated", "assessed", "prepared"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "in"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "the"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "future"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "being considered",
+      "pattern": null,
+      "direction": "BACKWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "awaiting",
+      "pattern": null,
+      "direction": "BACKWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "considered for",
+      "pattern": [{"LOWER": {"IN": ["considered", "consideration"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "for"}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "1_TREATMENT_OPTION",
+      "literal": "will consider",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "management of",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "no absolute mental health contraindications",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "no contraindications",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "schedule",
+      "pattern": null,
+      "direction": "FORWARD",
+      "allowed_types": ["VA_TRANSPLANT_CLINIC", "UNSPECIFIED_TRANSPLANT_CLINIC", "KIDNEY_TRANSPLANT_EVALUTATION", "TRANSPLANT_EVALUTATION"]
+    },
+    {
+      "category": "2_TRANSPLANT_EVAL",
+      "literal": "referred for",
+      "pattern": [{"LOWER":{"IN": ["was", "will", "can", "been", "has"]}, "OP":"?"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER":{"IN": ["refer", "referred", "schedule", "scheduled"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER":{"IN": ["him", "her", "vet", "them", "patient", "pt"]}, "OP":"?"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER":{"IN": ["to", "for"]}}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "ineligible",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "contraindication",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "refuses",
+      "pattern": [{"LOWER":{"IN": ["refuse", "refused", "refusing"]}}],
+      "direction": "FORWARD"
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "not a candidate",
+      "pattern": [{"LOWER": "not"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER":{"IN": ["a", "an"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER":{"IN": ["good", "optimal", "current", "likely"]}, "OP":"?"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "candidate"}],
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "does not qualify",
+      "pattern": [{"LOWER": {"IN": ["not", "n't"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "qualify"}],
+      "direction": "BIDIRECTIONAL"
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "non-candidate",
+      "pattern": null,
+      "direction": "BACKWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "given up on",
+      "pattern": [{"LOWER": {"IN": ["given", "give", "giving"]}}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "up"}, {"IS_SPACE": true, "OP": "?"}, {"LOWER": "on"}],
+      "direction": "BACKWARD"
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "not an option",
+      "pattern": null,
+      "direction": "BACKWARD"
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "removed from",
+      "pattern": null,
+      "direction": "BACKWARD"
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "currently inactive",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 4
+    },
+    {
+      "category": "5b_TRANSPLANT_EVAL",
+      "literal": "too high to start",
+      "pattern": null,
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 4
+    },
+    {
+      "category": "NEGATED_EXISTENCE",
+      "literal": "not received",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "NEGATED_EXISTENCE",
+      "literal": "unable",
+      "pattern": null,
+      "direction": "FORWARD"
+    },
+    {
+      "category": "NEGATED_EXISTENCE",
+      "literal": "not",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 10
+    },
+    {
+      "category": "NEGATED_EXISTENCE",
+      "literal": "no",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 5
+    },
+    {
+      "category": "TERMINATE",
+      "literal": ";",
+      "pattern": null,
+      "direction": "TERMINATE"
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "recent",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "h/o",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "recently had a",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "history of",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "had",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "got",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "hx",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "prior",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "underwent",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 5
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "pmh",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "past",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "underwent",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "sp",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "s/p",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "status post",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "HISTORICAL",
+      "literal": "post",
+      "pattern": null,
+      "direction": "FORWARD",
+      "max_scope": 2
+    },
+    {
+      "category": "DATE_EVENT",
+      "literal": "date",
+      "pattern": [{"ent_type": "DATE", "OP": "+"}],
+      "direction": "FORWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "DATE_EVENT",
+      "literal": "on date",
+      "pattern": [{"LOWER": {"IN": ["on", "in"]}}, {"IS_SPACE": true, "OP": "?"}, {"ent_type": "DATE", "OP": "+"}],
+      "direction": "BACKWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "DATE_EVENT",
+      "literal": "(date)",
+      "pattern": [{"IS_PUNCT": true}, {"IS_SPACE": true, "OP": "?"}, {"ent_type": "DATE", "OP": "+"}],
+      "direction": "BACKWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "DATE_EVENT",
+      "literal": "date",
+      "pattern": [{"ent_type": "RELATIVE_DATE", "OP": "+"}],
+      "direction": "BIDIRECTIONAL",
+      "max_scope": 1
+    },
+    {
+      "category": "DATE_EVENT",
+      "literal": "on date",
+      "pattern": [{"LOWER": {"IN": ["on", "in"]}}, {"IS_SPACE": true, "OP": "?"}, {"ent_type": "RELATIVE_DATE", "OP": "+"}],
+      "direction": "BACKWARD",
+      "max_scope": 1
+    },
+    {
+      "category": "DATE_EVENT",
+      "literal": "(date)",
+      "pattern": [{"IS_PUNCT": true}, {"IS_SPACE": true, "OP": "?"}, {"ent_type": "RELATIVE_DATE", "OP": "+"}],
+      "direction": "BACKWARD",
+      "max_scope": 1
+    }
+  ]
+}
